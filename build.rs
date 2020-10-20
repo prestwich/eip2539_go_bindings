@@ -23,7 +23,7 @@ fn main() {
     Command::new("sh").args(&[arg]).status().unwrap();
 
     println!("cargo:rustc-link-search=native={}", out_dir);
-    println!("cargo:rustc-link-lib=static=eip2537");
+    println!("cargo:rustc-link-lib=static=eip2539");
 
     Command::new("touch").args(&["build.rs"]).status().unwrap();
     // Command::new("touch").args(&[BUILD_SCRIPT_NAME]).status().unwrap();

@@ -7,8 +7,6 @@ pub const G2MUL_OPERATION_RAW_VALUE: u8 = OperationType::G2MUL as u8;
 pub const G2MULTIEXP_OPERATION_RAW_VALUE: u8 = OperationType::G2MULTIEXP as u8;
 
 pub const PAIR_OPERATION_RAW_VALUE: u8 = OperationType::PAIR as u8;
-pub const MAP_FP_TO_G1_OPERATION_RAW_VALUE: u8 = OperationType::MAPFPTOG1 as u8;
-pub const MAP_FP2_TO_G2_OPERATION_RAW_VALUE: u8 = OperationType::MAPFP2TOG2 as u8;
 
 #[repr(u8)]
 #[derive(Copy, Clone, Debug, PartialEq, Eq)]
@@ -20,8 +18,6 @@ pub enum OperationType {
     G2MUL = 5,
     G2MULTIEXP = 6,
     PAIR = 7,
-    MAPFPTOG1 = 8,
-    MAPFP2TOG2 = 9,
 }
 
 impl OperationType {
@@ -47,12 +43,6 @@ impl OperationType {
             },
             PAIR_OPERATION_RAW_VALUE => {
                 Some(OperationType::PAIR)
-            },
-            MAP_FP_TO_G1_OPERATION_RAW_VALUE => {
-                Some(OperationType::MAPFPTOG1)
-            },
-            MAP_FP2_TO_G2_OPERATION_RAW_VALUE => {
-                Some(OperationType::MAPFP2TOG2)
             },
             _ => {
                 None

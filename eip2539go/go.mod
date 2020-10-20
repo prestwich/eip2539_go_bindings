@@ -1,4 +1,4 @@
-module github.com/shamatar/eip2537gowrapper
+module github.com/prestwich/eip2539gowrapper
 
 go 1.15
 
@@ -11,6 +11,8 @@ require (
 	github.com/go-ole/go-ole v1.2.4 // indirect
 	github.com/golang/snappy v0.0.2 // indirect
 	github.com/shirou/gopsutil v2.20.9+incompatible // indirect
-	golang.org/x/crypto v0.0.0-20201012173705-84dcc777aaee // indirect
-	golang.org/x/sys v0.0.0-20201015000850-e3ed0017c211 // indirect
+	golang.org/x/crypto v0.0.0-20201016220609-9e8e0b390897 // indirect
+	golang.org/x/sys v0.0.0-20201018230417-eeed37f84f13 // indirect
 )
+
+replace github.com/ethereum/go-ethereum => github.com/prestwich/go-ethereum v1.9.22-espresso

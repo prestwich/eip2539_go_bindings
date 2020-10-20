@@ -9,7 +9,7 @@ import (
 )
 
 func Test(t *testing.T) {
-	precompilesMap := vm.PrecompiledContractsYoloV1
+	precompilesMap := vm.PrecompiledContractsEspresso
 
 	input := make([]byte, 128)
 	res, err := precompilesMap[common.BytesToAddress([]byte{0x12})].Run(input)

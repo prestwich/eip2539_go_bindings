@@ -1,5 +1,5 @@
 extern "C" {
-    pub fn c_eip2537_perform_operation(
+    pub fn c_eip2539_perform_operation(
         op: ::std::os::raw::c_char,
         i: *const ::std::os::raw::c_char,
         i_len: u32,

@@ -19,7 +19,7 @@ pub fn perform_operation(operation: OperationType, bytes: &[u8]) -> Result<Vec<u
     let mut output_len = 0u32;
     let mut error_description_len = 0u32;
 
-    let is_error = unsafe { self::api::c_eip2537_perform_operation(
+    let is_error = unsafe { self::api::c_eip2539_perform_operation(
         raw_operation_value,
         input, 
         input_len, 
@@ -59,12 +59,11 @@ pub fn perform_operation(operation: OperationType, bytes: &[u8]) -> Result<Vec<u
 
 #[cfg(test)]
 mod test {
-    use super::perform_operation;
-    use super::OperationType;
+    use super::*;
 
     #[test]
-    fn test_valid_vector_0() {
-        let input = vec![0u8; 128];
-        let _ = perform_operation(OperationType::MAPFP2TOG2, &input).unwrap();
+    fn test_invalid_vector_0() {
+        let input = vec![1u8; 256];
+        assert!(perform_operation(OperationType::G1ADD, &input).is_err());
     }
 }
